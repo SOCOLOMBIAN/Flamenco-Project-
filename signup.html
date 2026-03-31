@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Peña — Sign Up</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div class="auth-page">
+
+  <!-- Left panel -->
+  <div class="auth-left">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:40px">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="5" stroke="#FDF8F0" stroke-width="1.5"/><path d="M4 24c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="#FDF8F0" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span style="font-size:20px;font-weight:bold;color:#FDF8F0">La Peña</span>
+      </div>
+      <h2 style="font-size:24px;color:#FDF8F0;margin-bottom:12px">Join the community</h2>
+      <p style="font-size:13px;color:#ddd;line-height:1.8;margin-bottom:24px">La Peña is a verified flamenco community. Only dancers, teachers, enthusiasts and modistas can join.</p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;border-radius:50%;background:#FDF8F0;opacity:1"></div><span style="font-size:12px;color:#eee">Profile photo required for trust</span></div>
+        <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;border-radius:50%;background:#FDF8F0;opacity:1"></div><span style="font-size:12px;color:#eee">Agree to community rules</span></div>
+        <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;border-radius:50%;background:#FDF8F0;opacity:1"></div><span style="font-size:12px;color:#eee">Ratings are mandatory after each exchange</span></div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:#aaa">Already have an account? <a href="index.html" style="color:rgba(253,248,240,0.7)">Sign in</a></p>
+  </div>
+
+  <!-- Right panel -->
+  <div class="auth-right" style="align-items:flex-start;overflow-y:auto;padding:32px 40px">
+    <div class="auth-form" style="max-width:480px">
+      <h2 class="auth-title" style="text-align:left;margin-bottom:4px">Create your account</h2>
+      <p class="auth-sub" style="text-align:left;margin-bottom:20px">Fill in your details to join La Peña</p>
+
+      <!-- Photo upload -->
+      <div style="display:flex;align-items:center;gap:16px;padding:16px;background:#fff;border:1px solid #D4B8BC;border-radius:12px;margin-bottom:20px">
+        <div id="photoPreview" onclick="document.getElementById('photoInput').click()" style="width:64px;height:64px;border-radius:50%;border:2px dashed #D4B8BC;background:#F5EEF0;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;overflow:hidden">
+          <span style="font-size:22px;color:#7A3A45">+</span>
+          <span style="font-size:10px;color:#7A3A45">Photo</span>
+        </div>
+        <input type="file" id="photoInput" accept="image/*" style="display:none"/>
+        <div>
+          <p style="font-size:13px;font-weight:bold;color:#3D0A12;margin-bottom:2px">Profile photo</p>
+          <p style="font-size:12px;color:#7A3A45" id="photoStatus">Required — click the circle to upload</p>
+        </div>
+      </div>
+
+      <div id="msg" class="alert hidden"></div>
+
+      <!-- Name row -->
+      <div style="display:flex;gap:12px;margin-bottom:14px">
+        <div style="flex:1">
+          <label class="form-label">First name</label>
+          <input type="text" id="fname" class="form-input" placeholder="Maria"/>
+        </div>
+        <div style="flex:1">
+          <label class="form-label">Last name</label>
+          <input type="text" id="lname" class="form-input" placeholder="Garcia"/>
+        </div>
+      </div>
+
+      <!-- Email + phone row -->
+      <div style="display:flex;gap:12px;margin-bottom:14px">
+        <div style="flex:1">
+          <label class="form-label">Email address</label>
+          <input type="email" id="email" class="form-input" placeholder="maria@email.com"/>
+        </div>
+        <div style="flex:1">
+          <label class="form-label">Phone number</label>
+          <input type="tel" id="phone" class="form-input" placeholder="+1 (514) 000-0000"/>
+        </div>
+      </div>
+
+      <!-- Role -->
+      <div class="form-group">
+        <label class="form-label">Your connection to flamenco</label>
+        <select id="role" class="form-input">
+          <option value="" disabled selected>Select your role</option>
+          <option>Dancer — I take classes or perform</option>
+          <option>Teacher — I teach flamenco</option>
+          <option>Enthusiast — I love flamenco culture</option>
+          <option>Modista — I make flamenco costumes</option>
+        </select>
+      </div>
+
+      <!-- School -->
+      <div class="form-group">
+        <label class="form-label">Dance school or group <span style="font-weight:normal;color:#7A3A45">(optional)</span></label>
+        <input type="text" class="form-input" placeholder="e.g. Studio Flamenco MTL"/>
+      </div>
+
+      <!-- Password row -->
+      <div style="display:flex;gap:12px;margin-bottom:16px">
+        <div style="flex:1">
+          <label class="form-label">Password</label>
+          <div style="position:relative">
+            <input type="password" id="pw" class="form-input" placeholder="Min. 8 characters" style="padding-right:50px"/>
+            <button id="pwBtn" onclick="togglePassword('pw','pwBtn')" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:11px;color:#7A3A45;cursor:pointer">Show</button>
+          </div>
+        </div>
+        <div style="flex:1">
+          <label class="form-label">Confirm password</label>
+          <input type="password" id="pw2" class="form-input" placeholder="Repeat password"/>
+        </div>
+      </div>
+
+      <!-- Community rules -->
+      <div style="background:#F5EEF0;border-radius:10px;padding:14px;margin-bottom:20px">
+        <p style="font-size:11px;font-weight:bold;color:#3D0A12;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px">Community rules — agree to all</p>
+        <label style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;cursor:pointer">
+          <input type="checkbox" id="c0" style="margin-top:2px;accent-color:#5C0A1E"/>
+          <span style="font-size:12px;color:#3D0A12">I will return rented items in the same condition I received them</span>
+        </label>
+        <label style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;cursor:pointer">
+          <input type="checkbox" id="c1" style="margin-top:2px;accent-color:#5C0A1E"/>
+          <span style="font-size:12px;color:#3D0A12">I will respect deadlines for group orders and payments</span>
+        </label>
+        <label style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;cursor:pointer">
+          <input type="checkbox" id="c2" style="margin-top:2px;accent-color:#5C0A1E"/>
+          <span style="font-size:12px;color:#3D0A12">I will rate every exchange honestly after completing it</span>
+        </label>
+        <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer">
+          <input type="checkbox" id="c3" style="margin-top:2px;accent-color:#5C0A1E"/>
+          <span style="font-size:12px;color:#3D0A12">I understand my account can be deactivated if my rating is too low</span>
+        </label>
+      </div>
+
+      <button class="btn btn-primary btn-full" onclick="handleSignup()">Join La Peña</button>
+
+      <div class="auth-divider"><span>or sign up with</span></div>
+      <div class="auth-social" style="margin-bottom:20px">
+        <button>Google</button>
+        <button>Facebook</button>
+      </div>
+
+      <p class="auth-footer">Already have an account? <a href="index.html">Sign in</a></p>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/main.js"></script>
+<script>
+handlePhotoUpload('photoInput', 'photoPreview', 'photoStatus');
+
+function handleSignup() {
+  if (!validateSignup('email', 'pw', 'pw2', 'role', 'msg')) return;
+  var allChecked = ['c0','c1','c2','c3'].every(function(id) { return document.getElementById(id).checked; });
+  if (!allChecked) { showMsg('msg', 'Please agree to all community rules.', 'error'); return; }
+  showMsg('msg', 'Account created! Welcome to La Peña!', 'success');
+  setTimeout(function() { goTo('feed.html'); }, 1200);
+}
+</script>
+</body>
+</html>
