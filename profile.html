@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Peña — Profile</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#FDF8F0" stroke-width="1.5"/><path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#FDF8F0" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <div><span>La Peña</span><small>Montreal Flamenco Community</small></div>
+  </div>
+  <div class="navbar-links">
+    <a href="feed.html">Home</a>
+    <a href="community.html">Community</a>
+    <a href="profile.html" class="active">Profile</a>
+    <a href="feed.html" class="btn btn-sm" style="background:#FDF8F0;color:#5C0A1E;border:none;border-radius:8px;font-weight:bold">+ Add listing</a>
+  </div>
+</nav>
+
+<div class="page-layout">
+  <aside class="sidebar">
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="width:72px;height:72px;border-radius:50%;background:#5C0A1E;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold;color:#FDF8F0;margin:0 auto 12px">YN</div>
+      <p style="font-size:15px;font-weight:bold;color:#3D0A12">Your Name</p>
+      <p class="text-sm text-muted mt-8">Dancer · Montreal</p>
+      <p class="text-sm text-muted">Studio Flamenco MTL</p>
+      <div style="display:flex;gap:6px;margin-top:14px">
+        <div class="stat-box" style="flex:1"><p class="stat-num">4.9</p><p class="stat-label">Rating</p></div>
+        <div class="stat-box" style="flex:1"><p class="stat-num">8</p><p class="stat-label">Exchanges</p></div>
+        <div class="stat-box" style="flex:1"><p class="stat-num">3</p><p class="stat-label">Listings</p></div>
+      </div>
+    </div>
+
+    <p class="sidebar-label">Account</p>
+    <a class="sidebar-item active" onclick="showSection('listings',this)">My listings</a>
+    <a class="sidebar-item" onclick="showSection('history',this)">Exchange history</a>
+    <a class="sidebar-item" onclick="showSection('settings',this)">Account settings</a>
+    <a class="sidebar-item danger" onclick="goTo('index.html')">Sign out</a>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- MY LISTINGS -->
+    <div id="sectionListings">
+      <div class="section-header">
+        <h2 class="section-title">My listings</h2>
+        <button class="btn btn-primary btn-sm">+ Add new listing</button>
+      </div>
+      <div class="card-grid-3">
+        <a href="item.html" class="listing-card">
+          <div class="listing-card-img"><img src="images/bata_roja.jpg" alt="Bata de cola roja" style="width:90%;height:100%;object-fit:cover"/></div>
+          <div class="listing-card-body">
+            <div class="flex-between mb-8"><p class="listing-card-title">Red bata de cola</p><span class="badge badge-rent">Rent</span></div>
+            <p class="listing-card-sub">Size M · $15/week</p>
+            <div class="listing-card-footer"><span class="listing-price">$15/week + deposit $40 </span><span class="badge badge-active">Active</span></div>
+          </div>
+        </a>
+        <a href="item.html" class="listing-card">
+          <div class="listing-card-img"><img src="images/manton.jpg" alt="maton de Manila" style="width:90%;height:100%;object-fit:cover"/></div>
+          <div class="listing-card-body">
+            <div class="flex-between mb-8"><p class="listing-card-title">Mantón de Manila</p><span class="badge badge-shop">Shop</span></div>
+            <p class="listing-card-sub">White · $85</p>
+            <div class="listing-card-footer"><span class="listing-price">$85</span><span class="badge badge-active">Active</span></div>
+          </div>
+        </a>
+        <a href="item.html" class="listing-card">
+          <div class="listing-card-img"><img src="images/azul.jpeg" alt="blue shoes" style="width:90%;height:100%;object-fit:cover"/></div>
+          <div class="listing-card-body">
+            <div class="flex-between mb-8"><p class="listing-card-title">Flamenco shoes size 38</p><span class="badge badge-swap">Swap</span></div>
+            <p class="listing-card-sub">Swap for mantón</p>
+            <div class="listing-card-footer"><span class="listing-price">Swap</span><span class="badge badge-pending">Pending</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- EXCHANGE HISTORY -->
+    <div id="sectionHistory" style="display:none">
+      <h2 class="section-title mb-20">Exchange history</h2>
+      <div class="card">
+        <table style="width:100%;border-collapse:collapse">
+          <thead>
+            <tr style="background:#F5EEF0">
+              <th style="padding:10px 14px;text-align:left;font-size:11px;color:#7A3A45;text-transform:uppercase;letter-spacing:0.5px">Item</th>
+              <th style="padding:10px 14px;text-align:left;font-size:11px;color:#7A3A45;text-transform:uppercase;letter-spacing:0.5px">Type</th>
+              <th style="padding:10px 14px;text-align:left;font-size:11px;color:#7A3A45;text-transform:uppercase;letter-spacing:0.5px">With</th>
+              <th style="padding:10px 14px;text-align:left;font-size:11px;color:#7A3A45;text-transform:uppercase;letter-spacing:0.5px">Date</th>
+              <th style="padding:10px 14px;text-align:left;font-size:11px;color:#7A3A45;text-transform:uppercase;letter-spacing:0.5px">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top:1px solid #e0d5cc">
+              <td style="padding:12px 14px;font-size:13px;color:#3D0A12">Blue falda from Carmen R.</td>
+              <td style="padding:12px 14px;font-size:13px;color:#7A3A45">Rented</td>
+              <td style="padding:12px 14px;font-size:13px;color:#7A3A45">Carmen R.</td>
+              <td style="padding:12px 14px;font-size:13px;color:#7A3A45">Mar 10</td>
+              <td style="padding:12px 14px"><span style="font-size:12px;color:#3B6D11;font-weight:bold">Completed ★5</span></td>
+            </tr>
+            <tr style="border-top:1px solid #e0d5cc">
+              <td style="padding:12px 14px;font-size:13px;color:#3D0A12">Group order — Padial</td>
+              <td style="padding:12px 14px;font-size:13px;color:#7A3A45">Group order</td>
+              <td style="padding:12px 14px;font-size:13px;color:#7A3A45">Ana M.</td>
+              <td style="padding:12px 14px;font-size:13px;color:#7A3A45">Feb 20</td>
+              <td style="padding:12px 14px"><span style="font-size:12px;color:#3B6D11;font-weight:bold">Completed</span></td>
+            </tr>
+            <tr style="border-top:1px solid #e0d5cc">
+              <td style="padding:12px 14px;font-size:13px;color:#3D0A12">Lunares skirt swap</td>
+              <td style="padding:12px 14px;font-size:13px;color:#7A3A45">Swap</td>
+              <td style="padding:12px 14px;font-size:13px;color:#7A3A45">Rosa T.</td>
+              <td style="padding:12px 14px;font-size:13px;color:#7A3A45">Jan 15</td>
+              <td style="padding:12px 14px"><span style="font-size:12px;color:#3B6D11;font-weight:bold">Completed ★4</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div id="sectionSettings" style="display:none">
+      <h2 class="section-title mb-20">Account settings</h2>
+      <div class="card" style="max-width:500px">
+        <div style="display:flex;flex-direction:column;gap:1px">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #e0d5cc">
+            <span style="font-size:13px;color:#3D0A12">Identity verified</span>
+            <span style="font-size:12px;color:#3B6D11;font-weight:bold">✓ Verified</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #e0d5cc">
+            <span style="font-size:13px;color:#3D0A12">Notifications</span>
+            <span style="font-size:12px;color:#7A3A45">On</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #e0d5cc">
+            <span style="font-size:13px;color:#3D0A12">Language</span>
+            <span style="font-size:12px;color:#7A3A45">English / Español</span>
+          </div>
+          <div style="padding:14px 0">
+            <span style="font-size:13px;color:#A32D2D;cursor:pointer" onclick="goTo('index.html')">Sign out</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+function showSection(s, el) {
+  document.getElementById('sectionListings').style.display = s==='listings' ? 'block' : 'none';
+  document.getElementById('sectionHistory').style.display = s==='history' ? 'block' : 'none';
+  document.getElementById('sectionSettings').style.display = s==='settings' ? 'block' : 'none';
+  setActiveSidebar(el);
+}
+</script>
+</body>
+</html>

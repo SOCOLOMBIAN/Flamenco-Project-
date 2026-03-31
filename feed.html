@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Peña — Home Feed</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-brand">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#FDF8F0" stroke-width="1.5"/><path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#FDF8F0" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <div><span>La Peña</span><small>Montreal Flamenco Community</small></div>
+  </div>
+  <div class="navbar-links">
+    <a href="feed.html" class="active">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="#FDF8F0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home
+    </a>
+    <a href="community.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><circle cx="9" cy="7" r="3" stroke="#ddd" stroke-width="1.8"/><path d="M3 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#ddd" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="7" r="2.5" stroke="#ddd" stroke-width="1.6"/><path d="M19 14c1.657 0 3 1.343 3 3v2" stroke="#ddd" stroke-width="1.6" stroke-linecap="round"/></svg>Community
+    </a>
+    <a href="profile.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><circle cx="12" cy="8" r="4" stroke="#ddd" stroke-width="1.8"/><path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#ddd" stroke-width="1.8" stroke-linecap="round"/></svg>Profile
+    </a>
+    <a href="feed.html" class="btn btn-sm" style="background:#FDF8F0;color:#5C0A1E;border:none;border-radius:8px;font-weight:bold">+ Add listing</a>
+  </div>
+</nav>
+
+<div class="page-layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <p class="sidebar-label">Browse</p>
+    <a class="sidebar-item active" onclick="filterType('all',this)">All listings</a>
+    <a class="sidebar-item" onclick="filterType('rent',this)">Rent</a>
+    <a class="sidebar-item" onclick="filterType('swap',this)">Swap</a>
+    <a class="sidebar-item" onclick="filterType('shop',this)">Shop</a>
+    <a class="sidebar-item" href="community.html">Group orders</a>
+
+    <p class="sidebar-label">Filters</p>
+
+    <p style="font-size:12px;font-weight:bold;color:#3D0A12;margin-bottom:8px">Size</p>
+    <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px">
+      <span class="filter-tab" style="padding:3px 10px;font-size:11px" onclick="this.classList.toggle('active')">XS</span>
+      <span class="filter-tab" style="padding:3px 10px;font-size:11px" onclick="this.classList.toggle('active')">S</span>
+      <span class="filter-tab active" style="padding:3px 10px;font-size:11px" onclick="this.classList.toggle('active')">M</span>
+      <span class="filter-tab" style="padding:3px 10px;font-size:11px" onclick="this.classList.toggle('active')">L</span>
+      <span class="filter-tab" style="padding:3px 10px;font-size:11px" onclick="this.classList.toggle('active')">XL</span>
+    </div>
+
+    <p style="font-size:12px;font-weight:bold;color:#3D0A12;margin-bottom:8px">Category</p>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px">
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:12px;color:#3D0A12"><input type="checkbox" checked style="accent-color:#5C0A1E"/>Dresses</label>
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:12px;color:#3D0A12"><input type="checkbox" checked style="accent-color:#5C0A1E"/>Skirts</label>
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:12px;color:#3D0A12"><input type="checkbox" style="accent-color:#5C0A1E"/>Shoes</label>
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:12px;color:#3D0A12"><input type="checkbox" style="accent-color:#5C0A1E"/>Accessories</label>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main-content">
+
+    <!-- Search bar -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search red skirt, size M..." onkeydown="if(event.key==='Enter') filterListings(this.value, currentType)"/>
+      <button class="btn btn-primary" onclick="filterListings(document.getElementById('searchInput').value, currentType)">Search</button>
+    </div>
+
+    <!-- Group order alert -->
+    <div class="alert alert-warning flex-between" style="cursor:pointer" onclick="goTo('community.html')">
+      <div><strong>Group order open — </strong>Indumentaria Padial, Seville · Closes Apr 3 · 4 joined · ~$18 CAD shipping each</div>
+      <span style="color:#5C0A1E;font-weight:bold;white-space:nowrap">Join ↗</span>
+    </div>
+
+    <p class="text-sm text-muted mb-16" id="resultCount">6 listings found</p>
+
+    <!-- Listings grid -->
+    <div class="card-grid-3" id="listingsGrid">
+
+      <a href="item.html" class="listing-card" data-title="Bata de cola negra" data-type="rent">
+        <div class="listing-card-img"><img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=400&h=240&fit=crop&auto=format" alt="Bata de cola negra" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div class="listing-card-body">
+          <div class="flex-between mb-8">
+            <p class="listing-card-title">Bata de cola negra</p>
+            <span class="badge badge-rent">Rent</span>
+          </div>
+          <p class="listing-card-sub">Size M · Never used</p>
+          <div class="listing-card-footer">
+            <span class="listing-price">$20 / week</span>
+            <span class="listing-rating">★ 4.7 · Maria G.</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="item.html" class="listing-card" data-title="Top flamenco" data-type="swap">
+        <div class="listing-card-img"><img src="https://images.unsplash.com/photo-1469334817-a4eb3d792c8f?w=400&h=240&fit=crop&auto=format" alt="Top flamenco" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div class="listing-card-body">
+          <div class="flex-between mb-8">
+            <p class="listing-card-title">Top flamenco</p>
+            <span class="badge badge-swap">Swap</span>
+          </div>
+          <p class="listing-card-sub">Size M · Swap for shoes</p>
+          <div class="listing-card-footer">
+            <span class="listing-price">Swap offer</span>
+            <span class="listing-rating">★ 4.6 · Rosa T.</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="item.html" class="listing-card" data-title="Lunares skirt" data-type="shop">
+        <div class="listing-card-img"><img src="https://images.unsplash.com/photo-1583846783-8b2e73f0e4d4?w=400&h=240&fit=crop&auto=format" alt="Lunares skirt" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div class="listing-card-body">
+          <div class="flex-between mb-8">
+            <p class="listing-card-title">Lunares skirt</p>
+            <span class="badge badge-shop">Shop</span>
+          </div>
+          <p class="listing-card-sub">Size L · Black and white</p>
+          <div class="listing-card-footer">
+            <span class="listing-price">$12</span>
+            <span class="listing-rating">★ 5.0 · Lucia P.</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="item.html" class="listing-card" data-title="Flamenco shoes" data-type="shop">
+        <div class="listing-card-img"><img src="https://images.unsplash.com/photo-1543163615-6b3c99a3c759?w=400&h=240&fit=crop&auto=format" alt="Flamenco shoes" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div class="listing-card-body">
+          <div class="flex-between mb-8">
+            <p class="listing-card-title">Flamenco shoes size 38</p>
+            <span class="badge badge-shop">Shop</span>
+          </div>
+          <p class="listing-card-sub">Size 38 · Red · Used once</p>
+          <div class="listing-card-footer">
+            <span class="listing-price">$45</span>
+            <span class="listing-rating">★ 4.9 · Carmen R.</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="item.html" class="listing-card" data-title="Manton de Manila" data-type="shop">
+        <div class="listing-card-img"><img src="https://images.unsplash.com/photo-1558618047-b28cde5ad6a0?w=400&h=240&fit=crop&auto=format" alt="Manton de Manila" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div class="listing-card-body">
+          <div class="flex-between mb-8">
+            <p class="listing-card-title">Mantón de Manila</p>
+            <span class="badge badge-shop">Shop</span>
+          </div>
+          <p class="listing-card-sub">Vintage · Excellent condition</p>
+          <div class="listing-card-footer">
+            <span class="listing-price">$85</span>
+            <span class="listing-rating">★ 4.9 · Sofia L.</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="item.html" class="listing-card" data-title="Bata de cola roja" data-type="rent">
+        <div class="listing-card-img"><img src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=400&h=240&fit=crop&auto=format" alt="Bata de cola roja" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div class="listing-card-body">
+          <div class="flex-between mb-8">
+            <p class="listing-card-title">Bata de cola roja</p>
+            <span class="badge badge-rent">Rent</span>
+          </div>
+          <p class="listing-card-sub">Size S · Good condition</p>
+          <div class="listing-card-footer">
+            <span class="listing-price">$18 / week</span>
+            <span class="listing-rating">★ 4.8 · Ana M.</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+var currentType = 'all';
+function filterType(type, el) {
+  currentType = type;
+  setActiveSidebar(el);
+  filterListings(document.getElementById('searchInput').value, type);
+}
+</script>
+</body>
+</html>
