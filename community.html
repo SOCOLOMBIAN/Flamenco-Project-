@@ -3,26 +3,159 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>La Peña — Sign Up</title>
+  <title>La Peña — Community</title>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
-<div class="auth-page">
+<nav class="navbar">
+  <div class="navbar-brand">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#FDF8F0" stroke-width="1.5"/><path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#FDF8F0" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <div><span>La Peña</span><small>Montreal Flamenco Community</small></div>
+  </div>
+  <div class="navbar-links">
+    <a href="feed.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home
+    </a>
+    <a href="community.html" class="active">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="7" r="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M19 14c1.657 0 3 1.343 3 3v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Community
+    </a>
+    <a href="profile.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Profile
+    </a>
+  </div>
+</nav>
 
-  <!-- Left panel -->
-  <div class="auth-left">
-    <div>
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:40px">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="5" stroke="#FDF8F0" stroke-width="1.5"/><path d="M4 24c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="#FDF8F0" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <span style="font-size:20px;font-weight:bold;color:#FDF8F0">La Peña</span>
+<div class="page-layout">
+  <aside class="sidebar">
+    <p class="sidebar-label">Community</p>
+    <a class="sidebar-item active" onclick="showPanel('go',this)">Group orders</a>
+    <a class="sidebar-item" onclick="showPanel('ws',this)">Workshops</a>
+    <a class="sidebar-item" onclick="showPanel('chat',this)">Chat</a>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- GROUP ORDERS -->
+    <div id="panelGO">
+      <div class="section-header">
+        <div><h2 class="section-title">Group orders</h2><p class="section-sub">Join an order to split shipping from Spain</p></div>
+        <button class="btn btn-primary btn-sm">+ New group order</button>
       </div>
-      <h2 style="font-size:24px;color:#FDF8F0;margin-bottom:12px">Join the community</h2>
-      <p style="font-size:13px;color:#ddd;line-height:1.8;margin-bottom:24px">La Peña is a verified flamenco community. Only dancers, teachers, enthusiasts and modistas can join.</p>
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;border-radius:50%;background:#FDF8F0;opacity:1"></div><span style="font-size:12px;color:#eee">Profile photo required for trust</span></div>
-        <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;border-radius:50%;background:#FDF8F0;opacity:1"></div><span style="font-size:12px;color:#eee">Agree to community rules</span></div>
-        <div style="display:flex;align-items:center;gap:8px"><div style="width:5px;height:5px;border-radius:50%;background:#FDF8F0;opacity:1"></div><span style="font-size:12px;color:#eee">Ratings are mandatory after each exchange</span></div>
+      <div class="card-grid-2">
+        <div class="card">
+          <div class="flex-between mb-16">
+            <div><p style="font-size:15px;font-weight:bold;color:#3D0A12">Indumentaria Padial</p><p class="text-sm text-muted mt-8">Seville · By Ana M. · ★ 4.9</p></div>
+            <span class="badge badge-open">Open</span>
+          </div>
+          <div style="display:flex;gap:10px;margin-bottom:14px">
+            <div class="stat-box" style="flex:1"><p class="stat-num">4</p><p class="stat-label">Joined</p></div>
+            <div class="stat-box" style="flex:1"><p class="stat-num">Apr 3</p><p class="stat-label">Deadline</p></div>
+            <div class="stat-box" style="flex:1"><p class="stat-num" style="color:#3B6D11">~$18</p><p class="stat-label">Each</p></div>
+          </div>
+          <div style="display:flex;gap:6px;margin-bottom:14px">
+            <div style="width:28px;height:28px;border-radius:50%;background:#5C0A1E;display:flex;align-items:center;justify-content:center;font-size:10px;color:#FDF8F0">AM</div>
+            <div style="width:28px;height:28px;border-radius:50%;background:#7A3A45;display:flex;align-items:center;justify-content:center;font-size:10px;color:#FDF8F0">CR</div>
+            <div style="width:28px;height:28px;border-radius:50%;background:#3D0A12;display:flex;align-items:center;justify-content:center;font-size:10px;color:#FDF8F0">SL</div>
+            <div style="width:28px;height:28px;border-radius:50%;background:#D4B8BC;display:flex;align-items:center;justify-content:center;font-size:11px;color:#3D0A12">+1</div>
+          </div>
+          <button class="btn btn-primary btn-full" onclick="goTo('group-order.html')">Join this order ↗</button>
+        </div>
+        <div class="card">
+          <div class="flex-between mb-16">
+            <div><p style="font-size:15px;font-weight:bold;color:#3D0A12">El Rocío — accessories</p><p class="text-sm text-muted mt-8">Seville · By Carmen R. · ★ 5.0</p></div>
+            <span class="badge badge-open">Open</span>
+          </div>
+          <div style="display:flex;gap:10px;margin-bottom:14px">
+            <div class="stat-box" style="flex:1"><p class="stat-num">2</p><p class="stat-label">Joined</p></div>
+            <div class="stat-box" style="flex:1"><p class="stat-num">Apr 10</p><p class="stat-label">Deadline</p></div>
+            <div class="stat-box" style="flex:1"><p class="stat-num" style="color:#3B6D11">~$30</p><p class="stat-label">Each</p></div>
+          </div>
+          <div style="display:flex;gap:6px;margin-bottom:14px">
+            <div style="width:28px;height:28px;border-radius:50%;background:#5C0A1E;display:flex;align-items:center;justify-content:center;font-size:10px;color:#FDF8F0">CR</div>
+            <div style="width:28px;height:28px;border-radius:50%;background:#D4B8BC;display:flex;align-items:center;justify-content:center;font-size:11px;color:#3D0A12">+1</div>
+          </div>
+          <button class="btn btn-primary btn-full" onclick="goTo('group-order.html')">Join this order ↗</button>
+        </div>
+        <div class="card" style="opacity:0.5">
+          <div class="flex-between">
+            <div><p style="font-size:15px;font-weight:bold;color:#3D0A12">Feria Moda — trajes</p><p class="text-sm text-muted mt-8">By Sofia L. · Completed Mar 15</p></div>
+            <span class="badge badge-closed">Closed</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- WORKSHOPS -->
+    <div id="panelWS" style="display:none">
+      <div class="section-header">
+        <div><h2 class="section-title">Workshops</h2><p class="section-sub">Costume making ateliers and flamenco skills</p></div>
+        <button class="btn btn-primary btn-sm">+ New workshop</button>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="card">
+          <div class="flex-between mb-8">
+            <p style="font-size:15px;font-weight:bold;color:#3D0A12">Intro to sewing flamenco skirts</p>
+            <span class="badge badge-open">5 spots left</span>
+          </div>
+          <p class="text-sm text-muted mb-16">By Maria G. · Studio Flamenco MTL</p>
+          <div style="display:flex;gap:20px;margin-bottom:14px">
+            <div><p style="font-size:13px;font-weight:bold;color:#3D0A12">Apr 12</p><p class="text-sm text-muted">Date</p></div>
+            <div><p style="font-size:13px;font-weight:bold;color:#3D0A12">2:00 PM</p><p class="text-sm text-muted">Time</p></div>
+            <div><p style="font-size:13px;font-weight:bold;color:#3D0A12">3 hours</p><p class="text-sm text-muted">Duration</p></div>
+            <div><p style="font-size:13px;font-weight:bold;color:#3D0A12">$25</p><p class="text-sm text-muted">Materials incl.</p></div>
+          </div>
+          <button class="btn btn-primary btn-full">Register</button>
+        </div>
+        <div class="card">
+          <div class="flex-between mb-8">
+            <p style="font-size:15px;font-weight:bold;color:#3D0A12">How to care for your traje de flamenca</p>
+            <span class="badge badge-open">Free</span>
+          </div>
+          <p class="text-sm text-muted mb-16">By Ana M. · Online via Zoom</p>
+          <div style="display:flex;gap:20px;margin-bottom:14px">
+            <div><p style="font-size:13px;font-weight:bold;color:#3D0A12">Apr 18</p><p class="text-sm text-muted">Date</p></div>
+            <div><p style="font-size:13px;font-weight:bold;color:#3D0A12">6:00 PM</p><p class="text-sm text-muted">Time</p></div>
+            <div><p style="font-size:13px;font-weight:bold;color:#3D0A12">1 hour</p><p class="text-sm text-muted">Duration</p></div>
+            <div><p style="font-size:13px;font-weight:bold;color:#3D0A12">Free</p><p class="text-sm text-muted">Cost</p></div>
+          </div>
+          <button class="btn btn-primary btn-full">Register</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAT -->
+    <div id="panelChat" style="display:none">
+      <div class="section-header">
+        <div><h2 class="section-title">Community chat</h2><p class="section-sub">Flamenco costume questions only</p></div>
+      </div>
+      <div style="background:#fff;border:1px solid #D4B8BC;border-radius:8px;padding:16px;height:360px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;margin-bottom:12px" id="chatBox">
+        <div style="display:flex;gap:10px">
+          <div style="width:30px;height:30px;border-radius:50%;background:#5C0A1E;display:flex;align-items:center;justify-content:center;font-size:10px;color:#FDF8F0;flex-shrink:0">CR</div>
+          <div><p class="text-sm text-muted mb-8">Carmen · 2h ago</p><div style="background:#F5EEF0;border-radius:0 8px 8px 8px;padding:8px 12px;font-size:13px;color:#3D0A12;display:inline-block">Does anyone know where to find good castanets in Montreal?</div></div>
+        </div>
+        <div style="display:flex;gap:10px">
+          <div style="width:30px;height:30px;border-radius:50%;background:#7A3A45;display:flex;align-items:center;justify-content:center;font-size:10px;color:#FDF8F0;flex-shrink:0">AM</div>
+          <div><p class="text-sm text-muted mb-8">Ana · 1h ago</p><div style="background:#F5EEF0;border-radius:0 8px 8px 8px;padding:8px 12px;font-size:13px;color:#3D0A12;display:inline-block">Join my group order from Spain — I can add them!</div></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <input type="text" id="chatInput" class="search-input" placeholder="Ask a costume question..." onkeydown="if(event.key==='Enter') sendChatMessage('chatInput','chatBox','YN')"/>
+        <button class="btn btn-primary" onclick="sendChatMessage('chatInput','chatBox','YN')">Send</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+function showPanel(p, el) {
+  document.getElementById('panelGO').style.display = p==='go' ? 'block' : 'none';
+  document.getElementById('panelWS').style.display = p==='ws' ? 'block' : 'none';
+  document.getElementById('panelChat').style.display = p==='chat' ? 'block' : 'none';
+  setActiveSidebar(el);
+}
+</script>
+</body>
+</html>

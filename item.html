@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Peña — Item</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#FDF8F0" stroke-width="1.5"/><path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#FDF8F0" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <div><span>La Peña</span><small>Montreal Flamenco Community</small></div>
+  </div>
+  <div class="navbar-links">
+    <a href="feed.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home
+    </a>
+    <a href="community.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="7" r="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M19 14c1.657 0 3 1.343 3 3v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Community
+    </a>
+    <a href="profile.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Profile
+    </a>
+    <a href="add-listing.html" class="btn btn-sm" style="background:#FDF8F0;color:#5C0A1E;border:none;border-radius:6px;font-weight:bold">+ Add listing</a>
+  </div>
+</nav>
+
+<div class="page-layout">
+  <main class="main-content" style="max-width:800px">
+
+    <div style="margin-bottom:16px">
+      <a href="feed.html" style="font-size:13px;color:#7A3A45">← Back to listings</a>
+    </div>
+
+    <!-- Step 0: Item detail -->
+    <div id="step0">
+      <div style="display:flex;gap:24px;margin-bottom:24px;flex-wrap:wrap">
+
+        <!-- Photo -->
+        <div style="width:320px;height:320px;border-radius:8px;overflow:hidden;background:#F5EEF0;flex-shrink:0">
+          <img src="images/bata_roja.jpg" alt="Bata de cola roja" style="width:100%;height:100%;object-fit:cover"/>
+        </div>
+
+        <!-- Info -->
+        <div style="flex:1;min-width:220px">
+          <div class="flex-between mb-8">
+            <h2 style="font-size:20px;font-weight:bold;color:#3D0A12">Bata de cola roja</h2>
+            <span class="badge badge-rent">Rent</span>
+          </div>
+          <p class="text-muted text-sm mb-16">Listed by Ana M. · ★ 4.8 · Montreal</p>
+
+          <div style="display:flex;gap:10px;margin-bottom:16px">
+            <div class="stat-box" style="flex:1"><p class="stat-num">S</p><p class="stat-label">Size</p></div>
+            <div class="stat-box" style="flex:1"><p class="stat-num">$18</p><p class="stat-label">Per week</p></div>
+            <div class="stat-box" style="flex:1"><p class="stat-num">$50</p><p class="stat-label">Deposit</p></div>
+          </div>
+
+          <div class="card mb-16">
+            <p style="font-size:12px;font-weight:bold;color:#3D0A12;margin-bottom:8px">Description</p>
+            <p style="font-size:13px;color:#3D0A12;line-height:1.6">Red bata de cola in good condition. Used for one performance. Has small ruffle detail at the bottom. Available for pickup in Plateau-Mont-Royal.</p>
+          </div>
+
+          <div class="card mb-16">
+            <p style="font-size:12px;font-weight:bold;color:#3D0A12;margin-bottom:8px">Details</p>
+            <div class="flex-between mb-8"><span class="text-sm text-muted">Condition</span><span style="font-size:13px;color:#3D0A12">Good</span></div>
+            <div class="flex-between mb-8"><span class="text-sm text-muted">Colour</span><span style="font-size:13px;color:#3D0A12">Red</span></div>
+            <div class="flex-between mb-8"><span class="text-sm text-muted">Pickup</span><span style="font-size:13px;color:#3D0A12">Plateau-Mont-Royal</span></div>
+            <div class="flex-between"><span class="text-sm text-muted">Available</span><span style="font-size:13px;color:#3B6D11">Yes</span></div>
+          </div>
+
+          <div class="alert alert-warning" style="font-size:12px">
+            💳 A <strong>$50 deposit</strong> is required. It is refunded when you return the item in the same condition.
+          </div>
+
+          <button class="btn btn-primary btn-full" onclick="showStep(1)">Rent this item</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 1: Confirm & deposit -->
+    <div id="step1" style="display:none;max-width:480px">
+      <h2 style="font-size:18px;font-weight:bold;color:#3D0A12;margin-bottom:4px">Confirm your rental</h2>
+      <p class="text-muted text-sm mb-20">Bata de cola roja · Ana M.</p>
+
+      <div class="card mb-16">
+        <div class="flex-between mb-8"><span class="text-sm text-muted">Rental period</span><span style="font-size:13px;color:#3D0A12">1 week</span></div>
+        <div class="flex-between mb-8"><span class="text-sm text-muted">Rental fee</span><span style="font-size:13px;color:#3D0A12">$18</span></div>
+        <div class="flex-between mb-8"><span class="text-sm text-muted">Refundable deposit</span><span style="font-size:13px;color:#3D0A12">$50</span></div>
+        <div style="height:1px;background:#e0d5cc;margin:10px 0"></div>
+        <div class="flex-between"><span style="font-size:13px;font-weight:bold;color:#3D0A12">Total due now</span><span style="font-size:13px;font-weight:bold;color:#3D0A12">$68</span></div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Rental dates</label>
+        <div style="display:flex;gap:10px">
+          <input type="date" class="form-input"/>
+          <input type="date" class="form-input"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Pay with</label>
+        <label style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1.5px solid #5C0A1E;border-radius:6px;background:#FDF0F2;cursor:pointer;margin-bottom:8px"><input type="radio" name="pay" checked style="accent-color:#5C0A1E"/><span style="font-size:13px">Credit or debit card</span></label>
+        <label style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid #ccc;border-radius:6px;background:#fff;cursor:pointer;margin-bottom:8px"><input type="radio" name="pay" style="accent-color:#5C0A1E"/><span style="font-size:13px">PayPal</span></label>
+        <label style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid #ccc;border-radius:6px;background:#fff;cursor:pointer"><input type="radio" name="pay" style="accent-color:#5C0A1E"/><span style="font-size:13px">Interac e-Transfer</span></label>
+      </div>
+
+      <div style="display:flex;gap:10px;margin-top:20px">
+        <button class="btn btn-secondary" style="flex:1" onclick="showStep(0)">Back</button>
+        <button class="btn btn-primary" style="flex:2" onclick="showStep(2)">Pay $68 and confirm</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Success -->
+    <div id="step2" style="display:none;text-align:center;padding:40px 0;max-width:480px">
+      <p style="font-size:48px;margin-bottom:16px">🌹</p>
+      <h2 style="font-size:20px;font-weight:bold;color:#3D0A12;margin-bottom:8px">Rental confirmed!</h2>
+      <p class="text-muted mb-20">Ana M. will contact you to arrange pickup.</p>
+      <div class="alert alert-success" style="text-align:left;margin-bottom:20px">
+        <p style="font-size:12px;font-weight:bold;color:#27500A;margin-bottom:8px">What happens next</p>
+        <p style="font-size:12px;color:#3D0A12;margin-bottom:4px">1. Ana M. confirms your dates</p>
+        <p style="font-size:12px;color:#3D0A12;margin-bottom:4px">2. You arrange pickup in Plateau-Mont-Royal</p>
+        <p style="font-size:12px;color:#3D0A12;margin-bottom:4px">3. Return the item after your rental period</p>
+        <p style="font-size:12px;color:#3D0A12">4. Your $50 deposit is refunded ✓</p>
+      </div>
+      <button class="btn btn-primary" onclick="goTo('feed.html')">Back to listings</button>
+    </div>
+
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+function showStep(n) {
+  document.getElementById('step0').style.display = n===0 ? 'block' : 'none';
+  document.getElementById('step1').style.display = n===1 ? 'block' : 'none';
+  document.getElementById('step2').style.display = n===2 ? 'block' : 'none';
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>

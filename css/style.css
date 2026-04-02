@@ -356,6 +356,14 @@ select.form-input {
   align-items: center;
   justify-content: center;
   font-size: 44px;
+  overflow: hidden;
+}
+
+.listing-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .listing-card-body {
@@ -487,7 +495,7 @@ select.form-input {
 .stat-box {
   background: var(--cream-mid);
   border-radius: 6px;
-  padding: 2px;
+  padding: 10px;
   text-align: center;
 }
 
