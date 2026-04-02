@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<!-- Navbar -->
 <nav class="navbar">
   <div class="navbar-brand">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#FDF8F0" stroke-width="1.5"/><path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#FDF8F0" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -16,31 +15,27 @@
   </div>
   <div class="navbar-links">
     <a href="feed.html" class="active">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="#FDF8F0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Home
     </a>
     <a href="community.html">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><circle cx="9" cy="7" r="3" stroke="#ddd" stroke-width="1.8"/><path d="M3 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#ddd" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="7" r="2.5" stroke="#ddd" stroke-width="1.6"/><path d="M19 14c1.657 0 3 1.343 3 3v2" stroke="#ddd" stroke-width="1.6" stroke-linecap="round"/></svg>Community
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="7" r="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M19 14c1.657 0 3 1.343 3 3v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Community
     </a>
     <a href="profile.html">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><circle cx="12" cy="8" r="4" stroke="#ddd" stroke-width="1.8"/><path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#ddd" stroke-width="1.8" stroke-linecap="round"/></svg>Profile
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Profile
     </a>
   </div>
 </nav>
 
 <div class="page-layout">
 
-  <!-- Sidebar -->
   <aside class="sidebar">
     <p class="sidebar-label">Browse</p>
     <a class="sidebar-item active" onclick="filterType('all',this)">All listings</a>
-    <a class="sidebar-item" onclick="filterType('rent',this)">Rent</a>
-    <a class="sidebar-item" onclick="filterType('swap',this)">Swap</a>
-    <a class="sidebar-item" onclick="filterType('shop',this)">Shop</a>
+    <a class="sidebar-item" onclick="filterType('new',this)">New this week</a>
+    <a class="sidebar-item" onclick="filterType('rent',this)">Available to rent</a>
     <a class="sidebar-item" href="community.html">Group orders</a>
 
-    <p class="sidebar-label">Filters</p>
-
-    <p style="font-size:12px;font-weight:bold;color:#3D0A12;margin-bottom:8px">Size</p>
+    <p class="sidebar-label">Filter by size</p>
     <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px">
       <span class="filter-tab" style="padding:3px 10px;font-size:11px" onclick="this.classList.toggle('active')">XS</span>
       <span class="filter-tab" style="padding:3px 10px;font-size:11px" onclick="this.classList.toggle('active')">S</span>
@@ -49,8 +44,8 @@
       <span class="filter-tab" style="padding:3px 10px;font-size:11px" onclick="this.classList.toggle('active')">XL</span>
     </div>
 
-    <p style="font-size:12px;font-weight:bold;color:#3D0A12;margin-bottom:8px">Category</p>
-    <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px">
+    <p class="sidebar-label">Category</p>
+    <div style="display:flex;flex-direction:column;gap:6px">
       <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:12px;color:#3D0A12"><input type="checkbox" checked style="accent-color:#5C0A1E"/>Dresses</label>
       <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:12px;color:#3D0A12"><input type="checkbox" checked style="accent-color:#5C0A1E"/>Skirts</label>
       <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:12px;color:#3D0A12"><input type="checkbox" style="accent-color:#5C0A1E"/>Shoes</label>
@@ -58,35 +53,27 @@
     </div>
   </aside>
 
-  <!-- Main content -->
   <main class="main-content">
 
-    <!-- Search bar -->
     <div class="search-bar">
       <input type="text" id="searchInput" class="search-input" placeholder="Search red skirt, size M..." onkeydown="if(event.key==='Enter') filterListings(this.value, currentType)"/>
       <button class="btn btn-primary" onclick="filterListings(document.getElementById('searchInput').value, currentType)">Search</button>
     </div>
 
-    <!-- Group order alert -->
     <div class="alert alert-warning flex-between" style="cursor:pointer" onclick="goTo('community.html')">
       <div><strong>Group order open — </strong>Indumentaria Padial, Seville · Closes Apr 3 · 4 joined · ~$18 CAD shipping each</div>
       <span style="color:#5C0A1E;font-weight:bold;white-space:nowrap">Join ↗</span>
     </div>
 
-    
-    <div id="sectionListings">
-      <div class="section-header">
-        <h2 class="section-title">Listings</h2>
-        <a href="profile.html" button class="btn btn-primary btn-sm">+ Add new listing</button> </a>
+    <div class="section-header">
+      <p class="text-sm text-muted" id="resultCount">6 listings found</p>
+      <a href="add-listing.html" class="btn btn-primary btn-sm">+ Add listing</a>
     </div>
 
-    <p class="text-sm text-muted mb-16" id="resultCount">6 listings found</p>
-
-    <!-- Listings grid -->
     <div class="card-grid-3" id="listingsGrid">
 
       <a href="item.html" class="listing-card" data-title="Bata de cola negra" data-type="rent">
-        <div class="listing-card-img"><img src="images/negra.jpeg" alt="Bata de cola negra" style="width:100%;height:100%;object-fit:fill"/></div>
+        <div class="listing-card-img"><img src="images/negra.jpeg" alt="Bata de cola negra" style="width:100%;height:100%;object-fit:cover"/></div>
         <div class="listing-card-body">
           <div class="flex-between mb-8">
             <p class="listing-card-title">Bata de cola negra</p>
@@ -116,7 +103,7 @@
       </a>
 
       <a href="item.html" class="listing-card" data-title="Lunares skirt" data-type="shop">
-        <div class="listing-card-img"><img src="images/lunares.jpeg" alt="Lunares skirt" style="width:100%;height:100%;object-fit:fill"/></div>
+        <div class="listing-card-img"><img src="images/lunares.jpeg" alt="Lunares skirt" style="width:100%;height:100%;object-fit:cover"/></div>
         <div class="listing-card-body">
           <div class="flex-between mb-8">
             <p class="listing-card-title">Lunares skirt</p>
@@ -174,10 +161,10 @@
           </div>
         </div>
       </a>
+
     </div>
   </main>
 </div>
-
 
 <script src="js/main.js"></script>
 <script>
