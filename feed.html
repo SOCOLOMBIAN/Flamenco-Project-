@@ -24,7 +24,6 @@
     <a href="profile.html">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px"><circle cx="12" cy="8" r="4" stroke="#ddd" stroke-width="1.8"/><path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#ddd" stroke-width="1.8" stroke-linecap="round"/></svg>Profile
     </a>
-    <a href="feed.html" class="btn btn-sm" style="background:#FDF8F0;color:#5C0A1E;border:none;border-radius:8px;font-weight:bold">+ Add listing</a>
   </div>
 </nav>
 
@@ -74,13 +73,20 @@
       <span style="color:#5C0A1E;font-weight:bold;white-space:nowrap">Join ↗</span>
     </div>
 
+    
+    <div id="sectionListings">
+      <div class="section-header">
+        <h2 class="section-title">Listings</h2>
+        <a href="profile.html" button class="btn btn-primary btn-sm">+ Add new listing</button> </a>
+    </div>
+
     <p class="text-sm text-muted mb-16" id="resultCount">6 listings found</p>
 
     <!-- Listings grid -->
     <div class="card-grid-3" id="listingsGrid">
 
       <a href="item.html" class="listing-card" data-title="Bata de cola negra" data-type="rent">
-        <div class="listing-card-img"><img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=400&h=240&fit=crop&auto=format" alt="Bata de cola negra" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div class="listing-card-img"><img src="images/negra.jpeg" alt="Bata de cola negra" style="width:100%;height:100%;object-fit:fill"/></div>
         <div class="listing-card-body">
           <div class="flex-between mb-8">
             <p class="listing-card-title">Bata de cola negra</p>
@@ -95,7 +101,7 @@
       </a>
 
       <a href="item.html" class="listing-card" data-title="Top flamenco" data-type="swap">
-        <div class="listing-card-img"><img src="https://images.unsplash.com/photo-1469334817-a4eb3d792c8f?w=400&h=240&fit=crop&auto=format" alt="Top flamenco" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div class="listing-card-img"><img src="images/top.jpeg" alt="Top flamenco" style="width:100%;height:100%;object-fit:cover"/></div>
         <div class="listing-card-body">
           <div class="flex-between mb-8">
             <p class="listing-card-title">Top flamenco</p>
@@ -110,7 +116,7 @@
       </a>
 
       <a href="item.html" class="listing-card" data-title="Lunares skirt" data-type="shop">
-        <div class="listing-card-img"><img src="https://images.unsplash.com/photo-1583846783-8b2e73f0e4d4?w=400&h=240&fit=crop&auto=format" alt="Lunares skirt" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div class="listing-card-img"><img src="images/lunares.jpeg" alt="Lunares skirt" style="width:100%;height:100%;object-fit:fill"/></div>
         <div class="listing-card-body">
           <div class="flex-between mb-8">
             <p class="listing-card-title">Lunares skirt</p>
@@ -125,7 +131,7 @@
       </a>
 
       <a href="item.html" class="listing-card" data-title="Flamenco shoes" data-type="shop">
-        <div class="listing-card-img"><img src="https://images.unsplash.com/photo-1543163615-6b3c99a3c759?w=400&h=240&fit=crop&auto=format" alt="Flamenco shoes" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div class="listing-card-img"><img src="images/rojos.webp" alt="Flamenco shoes" style="width:100%;height:100%;object-fit:cover"/></div>
         <div class="listing-card-body">
           <div class="flex-between mb-8">
             <p class="listing-card-title">Flamenco shoes size 38</p>
@@ -140,7 +146,7 @@
       </a>
 
       <a href="item.html" class="listing-card" data-title="Manton de Manila" data-type="shop">
-        <div class="listing-card-img"><img src="https://images.unsplash.com/photo-1558618047-b28cde5ad6a0?w=400&h=240&fit=crop&auto=format" alt="Manton de Manila" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div class="listing-card-img"><img src="images/manton.jpg" alt="Manton de Manila" style="width:100%;height:100%;object-fit:cover"/></div>
         <div class="listing-card-body">
           <div class="flex-between mb-8">
             <p class="listing-card-title">Mantón de Manila</p>
@@ -155,7 +161,7 @@
       </a>
 
       <a href="item.html" class="listing-card" data-title="Bata de cola roja" data-type="rent">
-        <div class="listing-card-img"><img src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=400&h=240&fit=crop&auto=format" alt="Bata de cola roja" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div class="listing-card-img"><img src="images/bata_roja.jpg" alt="Bata de cola roja" style="width:100%;height:100%;object-fit:cover"/></div>
         <div class="listing-card-body">
           <div class="flex-between mb-8">
             <p class="listing-card-title">Bata de cola roja</p>
@@ -168,10 +174,10 @@
           </div>
         </div>
       </a>
-
     </div>
   </main>
 </div>
+
 
 <script src="js/main.js"></script>
 <script>
