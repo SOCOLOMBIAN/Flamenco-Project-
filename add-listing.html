@@ -127,14 +127,16 @@
       <button class="btn btn-primary btn-full" onclick="submitListing()">Post listing</button>
     </div>
 
-    <!-- Step 1: Success -->
-    <div id="step1" style="display:none;text-align:center;padding:40px 0">
-      <p style="font-size:48px;margin-bottom:16px">✅</p>
-      <h2 style="font-size:20px;font-weight:bold;color:#3D0A12;margin-bottom:8px">Listing posted!</h2>
-      <p class="text-muted mb-20">Your item is now visible to the La Peña community.</p>
-      <div style="display:flex;gap:10px;justify-content:center">
-        <button class="btn btn-secondary" onclick="goTo('profile.html')">View my listings</button>
-        <button class="btn btn-primary" onclick="goTo('feed.html')">Back to feed</button>
+    <!-- popup overlay -->
+    <div id="successPopup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:200;align-items:center;justify-content:center">
+      <div style="background:white;border-radius:10px;padding:32px 28px;text-align:center;max-width:320px;width:90%;box-shadow:0 8px 32px rgba(0,0,0,0.18)">
+        <p style="font-size:36px;margin-bottom:10px">🌹</p>
+        <h2 style="font-size:17px;font-weight:bold;color:#3D0A12;margin-bottom:6px">Listing posted!</h2>
+        <p style="font-size:13px;color:#7A3A45;margin-bottom:20px">Your item is now visible to the community.</p>
+        <div style="display:flex;gap:8px;justify-content:center">
+          <a href="profile.html" class="btn btn-secondary" style="font-size:12px;padding:8px 14px">View my listings</a>
+          <a href="feed.html" class="btn btn-primary" style="font-size:12px;padding:8px 14px">Back to feed</a>
+        </div>
       </div>
     </div>
 
@@ -146,12 +148,13 @@
 handlePhotoUpload('photoInput', 'photoPreview', 'photoStatus');
 
 function submitListing() {
-  showMsg('msg', 'Listing posted!', 'success');
-  setTimeout(function() {
-    document.getElementById('step0').style.display = 'none';
-    document.getElementById('step1').style.display = 'block';
-    window.scrollTo(0,0);
-  }, 800);
+  var title = document.querySelector('input[placeholder="e.g. Red bata de cola, size M"]').value.trim();
+  if (!title) {
+    showMsg('msg', 'Please add a title for your listing.', 'error');
+    return;
+  }
+  var popup = document.getElementById('successPopup');
+  popup.style.display = 'flex';
 }
 </script>
 </body>
